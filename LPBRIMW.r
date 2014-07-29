@@ -69,10 +69,10 @@ bLPW <- function (x,as.adjacency=FALSE) {
          overlap <- x[lsp,] %*% t(x)
 
          # remove the node itself (maybe this isn't necessary?)
-         overlap <- overlap[,colnames(overlap) != lsp]
+         # overlap <- overlap[,colnames(overlap) != lsp]
 
          # select the node with the greatest overlap
-         donor <- names(overlap)[which.is.max(overlap)]
+         donor <- colnames(overlap)[which.is.max(overlap)]
 
          # set the label of lsp to be that of the donor
          lB[lsp] <- lB[donor]
@@ -110,10 +110,10 @@ bLPW <- function (x,as.adjacency=FALSE) {
          overlap <- x[lsp,] %*% t(x)
 
          # remove the node itself
-         overlap <- overlap[,colnames(overlap) != lsp]
+         # overlap <- overlap[,colnames(overlap) != lsp]
 
          # select the node with the greatest overlap
-         donor <- names(overlap)[which.is.max(overlap)]
+         donor <- colnames(overlap)[which.is.max(overlap)]
 
          # set the label of lsp to be that of the donor
          lB[lsp] <- lB[donor]
