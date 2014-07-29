@@ -51,7 +51,7 @@ bLPW <- function (x,as.adjacency=FALSE) {
    maxl <- lA
    
    # how's progress coming along?
-   cat('Label propagation starting\n')
+   cat('\nLabel propagation starting\n')
    cat('\rCurrent Q\t',oldQ)
    
    # Label propagation
