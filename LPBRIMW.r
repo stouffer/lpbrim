@@ -68,8 +68,8 @@ bLPW <- function (x,as.adjacency=FALSE) {
          # how strongly do other nodes' interactions overlap with those of lsp
          overlap <- x[lsp,] %*% t(x)
 
-         # remove the node itself
-         overlap <- overlap[,colnames(overlap) != lsp]
+         # remove the node itself (maybe this isn't necessary?)
+         # overlap <- overlap[,colnames(overlap) != lsp]
 
          # select the node with the greatest overlap
          donor <- names(overlap)[which.is.max(overlap)]
