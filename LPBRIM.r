@@ -2,11 +2,14 @@ library(nnet)
 library(snow)
 library(snowfall)
 
+source('common.r')
+
 bLP <- function (x,as.adjacency=TRUE) {
    cat('Label propagation starting\n')
    if(as.adjacency) x[x>0] <- 1
    OrderVec <- c(rownames(x),colnames(x))
-   x <- x[sample(c(1:NROW(x))),sample(c(1:NCOL(x)))]
+   x <- x[sample(c(1:NROW(x))),]
+   x <- x[,sample(c(1:NCOL(x)))]
    # HTL labels
    lT <- c(1:NROW(x))
    names(lT) <- rownames(x)
